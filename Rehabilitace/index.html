@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Rehabilitace</title>
+    
+    <!-- Google Fonts - Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body class="bg-D9D9D9 text-black">
+    <!-- Navigation -->
+    <nav class="bg-[#EAEAEA] h-[124px] md:h-auto sticky top-0 z-50" style="box-shadow: 0 10px 40px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
+        <div class="max-w-[1920px] mx-auto px-4 md:px-6 py-4 md:py-6 lg:px-12">
+            <div class="flex items-center justify-between pt-12 md:pt-0 px-0">
+                <!-- Logo -->
+                <div class="shrink-0">
+                    <img src="/logo.png" alt="Logo" class="w-[148px] h-[49px] object-contain">
+                </div>
+                
+                <!-- Desktop Navigation Menu (hidden on mobile) -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="/" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Domů</a>
+                    <a href="/objednat.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Objednat termín</a>
+                    <a href="/ochrana.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Ochrana údajů</a>
+                    <a href="/tym.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Náš tým</a>
+                    <a href="/about.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">About</a>
+                    <a href="/hodnoceni.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Hodnocení</a>
+                </div>
+                
+                <!-- Right side buttons -->
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- Phone button -->
+                    <button class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition">
+                        <img src="/phoneButton.png" alt="Phone" class="w-full h-full object-contain">
+                    </button>
+                    
+                    <!-- Calendar button -->
+                    <button class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition">
+                        <img src="/calendar.png" alt="Calendar" class="w-full h-full object-contain">
+                    </button>
+                    
+                    <!-- Language switcher -->
+                    <div class="w-[59px] h-[22px] lg:w-20 lg:h-8 bg-[#62A8C6AB] rounded-xl lg:rounded-2xl flex items-center px-1 cursor-pointer hover:bg-[#62A8C6] transition">
+                        <div class="flex items-center justify-between w-full px-1 text-black">
+                            <span class="text-[10px] lg:text-sm font-medium z-10">CZ</span>
+                            <div class="absolute -ml-[3px] lg:-ml-[5px] w-[21px] h-3.5 lg:w-8 lg:h-6 bg-[#D9D9D9] rounded-xl shadow-sm"></div>
+                            <span class="text-[10px] lg:text-sm font-medium">EN</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hamburger menu -->
+                    <button id="menuButton" class="w-[35px] h-[35px] flex flex-col font-black items-center justify-center space-y-1 transition cursor-pointer hover:opacity-70">
+                        <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
+                        <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
+                        <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full Screen Menu Overlay -->
+    <div id="fullscreenMenu" class="fixed inset-0 bg-[#EAEAEA] z-60 transform -translate-y-full transition-transform duration-300">
+        <div class="h-full overflow-y-auto">
+            <!-- Header with close button -->
+            <div class="flex justify-end p-7">
+                <button id="closeMenu" class="flex items-center mt-[29px] cursor-pointer space-x-2 text-[#032754] hover:text-[#62A8C6] transition">
+                    <span class="font text-[14px]">Zavřít</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search bar -->
+            <div class="px-6 mb-11 mt-[7px]">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        placeholder="Hledat" 
+                        class="w-full h-[35px] px-4 py-3 bg-[#e3e3e7] rounded-[53px] text-[#032754] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#75D1D9]"
+                    >
+                    <svg class="absolute cursor-pointer right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#032754]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Menu items -->
+            <nav class="px-6 space-y-0">
+                <!-- O NÁS -->
+                <div class="border-b-2 border-[#798AAC]">
+                    <button class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                        <span class="font-semibold text-[16px]">O NÁS</span>
+                        <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- ONEMOCNĚNÍ -->
+                <div class="border-b-2 border-[#798AAC]">
+                    <button class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                        <span class="font-semibold text-[16px]">ONEMOCNĚNÍ</span>
+                        <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- LÉČBA -->
+                <div class="border-b-2 border-[#798AAC]">
+                    <button class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                        <span class="font-semibold text-[16px]">LÉČBA</span>
+                        <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- INFORMACE -->
+                <div class="border-b-2 border-[#798AAC]">
+                    <button class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                        <span class="font-semibold text-[16px]">INFORMACE</span>
+                        <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="mt-[30px] md:px-6 lg:px-12">
+      <!-- Hero Section -->
+      <div class="max-w-[1920px] mx-auto flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-12">
+        <!-- Banner Image -->
+        <div class="flex justify-center md:justify-start md:shrink-0">
+          <img class="w-full max-w-md md:max-w-sm lg:max-w-lg" src="/banner.png" alt="banner">
+        </div>
+        
+        <!-- Text -->
+        <div class="px-4 md:flex-1">
+          <h1 class="text-center md:text-left text-[22px] md:text-2xl lg:text-3xl poppins-regular" style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 0px 2px 20px rgba(0, 0, 0, 0.3);">
+            Přední rehabilitační centrum v České republice s nejmodernějšími technologiemi a týmem zkušených odborníků
+          </h1>
+        </div>
+      </div>
+
+      <!-- Blue Section with Buttons -->
+      <div class="mt-4 bg-[#3D6FAD] w-[335px] h-[27px] mx-auto flex items-center justify-center rounded-xs">
+        <div class="flex items-center justify-center gap-0">
+            <!-- REHABILITACE Button -->
+            <button class="inter-regular text-[12px] cursor-pointer text-white text-center hover:text-[#62A8C6] transition-colors duration-300">
+              REHABILITACE
+            </button>
+            
+            <!-- Dot Separator -->
+            <div class="w-1 h-1 bg-white rounded-full mx-4"></div>
+            
+            <!-- MASÁŽE Button -->
+            <button class="inter-regular text-[12px] cursor-pointer text-white text-center hover:text-[#62A8C6] transition-colors duration-300">
+              MASÁŽE
+            </button>
+            
+            <!-- Dot Separator -->
+            <div class="w-1 h-1 bg-white rounded-full mx-4"></div>
+            
+            <!-- K ORTOPEDOVI Button -->
+            <button class="inter-regular text-[12px] cursor-pointer text-white text-center hover:text-[#62A8C6] transition-colors duration-300">
+              K ORTOPEDOVI
+            </button>
+          </div>
+        </div>
+      </div>
+      <h2 class="inter-bold text-[15px] text-center mt-6">AŤ UŽ VÁS BOLÍ COKOLIV, <br>MY VÁM POMŮŽEME.</br></h2>
+      <h3 class="inter-regular text-[14px] text-center px-14 mt-2">Žádné zranění není tak malé, abyste nemohli očekávat špičkovou ortopedickou péči. Ať už máte nakopnutý prst na noze nebo chronický problém s páteří, vaše péče je pro nás prioritou.</h3>
+    </main>
+
+    <script>
+        // Fullscreen menu functionality
+        const menuButton = document.getElementById('menuButton');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function openMenu() {
+            fullscreenMenu.classList.remove('-translate-y-full');
+            fullscreenMenu.classList.add('translate-y-0');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuFunc() {
+            fullscreenMenu.classList.remove('translate-y-0');
+            fullscreenMenu.classList.add('-translate-y-full');
+            document.body.style.overflow = '';
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+    </script>
+</body>
+</html>
