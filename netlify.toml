@@ -1,6 +1,6 @@
 [build]
   base = "Rehabilitace"
-  command = "npm run build"
+  command = "npm rebuild lightningcss --update-binary || true && npm run build"
   publish = "Rehabilitace/dist"
 
 [[redirects]]
