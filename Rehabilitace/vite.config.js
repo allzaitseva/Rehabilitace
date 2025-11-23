@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
@@ -6,6 +7,12 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
-    minify: 'esbuild'
+    minify: 'esbuild',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        objednat: resolve(__dirname, 'objednat.html')
+      }
+    }
   }
 })
