@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objednat termín - Rehabilitace</title>
+
+    <!-- Google Fonts - Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#032754',
+                        secondary: '#62A8C6',
+                        accent: '#84C9FE',
+                        blue: '#3D6FAD',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Poppins Font Styles */
+        .poppins-thin {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .poppins-extralight {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .poppins-light {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .poppins-extrabold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .poppins-black {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        /* Inter Font Styles */
+        .inter {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        .inter-thin {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .inter-extralight {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .inter-light {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .inter-regular {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .inter-medium {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .inter-semibold {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .inter-bold {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .inter-extrabold {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .inter-black {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-[#EAEAEA] text-black">
+
+    <body class="bg-[#EAEAEA] text-black">
+        <!-- Header -->
+        <header class="bg-[#EAEAEA] h-[124px] md:h-auto sticky top-0 z-50"
+            style="box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.15);">
+            <div class="max-w-[1920px] mx-auto px-4 md:px-6 py-4 md:py-6 lg:px-12">
+                <div class="flex items-center justify-between pt-12 md:pt-0 px-0">
+                    <!-- Logo -->
+                    <div class="shrink-0">
+                        <a href="./index.html" class="block hover:opacity-80 transition">
+                            <img src="./public/logo.png" alt="Logo" class="w-[148px] h-[49px] object-contain">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation Menu (hidden on mobile) -->
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <a href="./index.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Domů</a>
+                        <a href="./objednat.html"
+                            class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Objednat
+                            termín</a>
+                        <a href="./index.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Náš tým</a>
+                        <a href="./index.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">O nás</a>
+                    </nav>
+
+                    <!-- Right side buttons -->
+                    <div class="flex items-center space-x-2 md:space-x-4">
+                        <!-- Phone button -->
+                        <button class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition"
+                            aria-label="Zavolat">
+                            <img src="./public/phoneButton.png" alt="Phone"
+                                class="w-full h-full object-contain rounded-md">
+                        </button>
+
+                        <!-- Calendar button -->
+                        <a href="./objednat.html"
+                            class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition block"
+                            aria-label="Objednat termín">
+                            <img src="./public/calendar.png" alt="Calendar"
+                                class="w-full h-full object-contain rounded-md">
+                        </a>
+
+                        <!-- Language switcher -->
+                        <div
+                            class="w-[59px] h-[22px] lg:w-20 lg:h-8 bg-[#62A8C6AB] rounded-xl lg:rounded-2xl flex items-center px-1 cursor-pointer hover:bg-[#62A8C6] transition">
+                            <div class="flex items-center justify-between w-full px-1 text-black">
+                                <span class="text-[10px] lg:text-sm font-medium z-10">CZ</span>
+                                <div
+                                    class="absolute -ml-[3px] lg:-ml-[5px] w-[21px] h-3.5 lg:w-8 lg:h-6 bg-[#D9D9D9] rounded-xl shadow-sm">
+                                </div>
+                                <span class="text-[10px] lg:text-sm font-medium">EN</span>
+                            </div>
+                        </div>
+
+                        <!-- Hamburger menu -->
+                        <button id="menuButton"
+                            class="w-[35px] h-[35px] flex flex-col font-black items-center justify-center space-y-1 transition cursor-pointer hover:opacity-70"
+                            aria-label="Otevřít menu">
+                            <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
+                            <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
+                            <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Full Screen Menu Overlay -->
+        <aside id="fullscreenMenu"
+            class="fixed inset-0 bg-[#EAEAEA] transform -translate-y-full transition-transform duration-300"
+            style="z-index: 10000;" aria-label="Hlavní navigační menu">
+            <div class="h-full overflow-y-auto">
+                <!-- Header with close button -->
+                <div class="flex justify-end p-7">
+                    <button id="closeMenu"
+                        class="flex items-center mt-[29px] cursor-pointer space-x-2 text-[#032754] hover:text-[#62A8C6] transition"
+                        aria-label="Zavřít menu">
+                        <span class="font text-[14px]">Zavřít</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Search bar -->
+                <div class="px-6 mb-11 mt-[7px]">
+                    <div class="relative">
+                        <label for="searchInput" class="sr-only">Hledat v menu</label>
+                        <input id="searchInput" type="search" placeholder="Hledat"
+                            class="w-full h-[35px] px-4 py-3 bg-[#e3e3e7] rounded-[53px] text-[#032754] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#75D1D9]"
+                            aria-label="Vyhledávání v menu">
+                        <svg class="absolute cursor-pointer right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#032754]"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Menu items -->
+                <nav id="menuNav" class="px-6 space-y-0" aria-label="Kategorie služeb">
+                    <!-- O NÁS -->
+                    <div class="border-b-2 border-[#798AAC] menu-section"
+                        data-search-text="o nás o ortopedickém zdravotním centru seznamte se s týmem hodnocení pacientů">
+                        <button id="onasButton"
+                            class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                            <span class="font-semibold text-[16px]">O NÁS</span>
+                            <svg id="onasIcon" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path id="onasIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu Container -->
+                        <div id="onasSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    O ORTOPEDICKÉM ZDRAVOTNÍM CENTRU
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    SEZNAMTE SE S TÝMEM
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    HODNOCENÍ PACIENTŮ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ONEMOCNĚNÍ -->
+                    <div class="border-b-2 border-[#798AAC] menu-section"
+                        data-search-text="onemocnění krk ramena záda ruka zápěstí loket kyčel pánev noha koleno kotník chodidlo">
+                        <button id="onemocneniButton"
+                            class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                            <span class="font-semibold text-[16px]">ONEMOCNĚNÍ</span>
+                            <svg id="onemocneniIcon" class="w-5 h-5 transition-transform group-hover:scale-110"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path id="onemocneniIconPath" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu Container -->
+                        <div id="onemocneniSubmenu"
+                            class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    KRK
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    RAMENA
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    ZÁDA
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    RUKA, ZÁPĚSTÍ A LOKET
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    KYČEL A PÁNEV
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    NOHA
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    KOLENO
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    KOTNÍK A CHODIDLO
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LÉČBA -->
+                    <div class="border-b-2 border-[#798AAC] menu-section"
+                        data-search-text="léčba komplexní ortopedie sportovní medicína kompletní péče o páteř dětská ortopedie">
+                        <button id="lecbaButton"
+                            class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                            <span class="font-semibold text-[16px]">LÉČBA</span>
+                            <svg id="lecbaIcon" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path id="lecbaIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu Container -->
+                        <div id="lecbaSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    KOMPLEXNÍ ORTOPEDIE
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    SPORTOVNÍ MEDICÍNA
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    KOMPLETNÍ PÉČE O PÁTEŘ
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    DĚTSKÁ ORTOPEDIE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INFORMACE -->
+                    <div class="border-b-2 border-[#798AAC] menu-section"
+                        data-search-text="informace co očekávat osobní online návštěvy druhé lékařské posudky pojištění">
+                        <button id="informaceButton"
+                            class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
+                            <span class="font-semibold text-[16px]">INFORMACE</span>
+                            <svg id="informaceIcon" class="w-5 h-5 transition-transform group-hover:scale-110"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path id="informaceIconPath" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu Container -->
+                        <div id="informaceSubmenu"
+                            class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    CO OČEKÁVAT
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    OSOBNÍ A ONLINE NÁVŠTĚVY
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    DRUHÉ LÉKAŘSKÉ POSUDKY
+                                </button>
+                                <button
+                                    class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                                    POJIŠTĚNÍ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="min-h-screen">
+            <!-- Booking Form -->
+            <div class="w-full max-w-[1200px] mx-auto">
+                <!-- Title -->
+                <h1
+                    class="inter-bold text-[18px] md:text-[24px] lg:text-[28px] text-center px-[102px] md:px-12 mt-11 md:mt-16 lg:mt-20 text-[#032754]">
+                    OBJEDNAT TERMÍN
+                </h1>
+
+                <!-- Description -->
+                <p
+                    class="text-black inter-medium text-[12px] md:text-[14px] lg:text-[16px] px-12 md:px-16 mt-[34px] md:mt-8 lg:mt-10 text-center">
+                    Zavolejte na (201) 596-3730 nebo vyplňte formulář níže a požádejte o termín.
+                </p>
+
+                <!-- Call Button -->
+                <div class="flex justify-center mt-2 md:mt-6 lg:mt-8">
+                    <button
+                        class="w-[243px] md:w-[280px] lg:w-[320px] h-[30px] md:h-10 lg:h-[45px] bg-[#3D6FAD] rounded-md flex items-center justify-center gap-2 hover:bg-[#3D6FAD]/80 transition">
+                        <svg class="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" fill="white" viewBox="0 0 24 24">
+                            <path
+                                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                        </svg>
+                        <span class="text-white inter-semibold text-[12px] md:text-[14px] lg:text-[16px]">VOLEJTE
+                            477-476-9934</span>
+                    </button>
+                </div>
+
+                <!-- Form Section -->
+                <section class="mt-[29px] md:mt-12 lg:mt-16 px-[35px] md:px-12 lg:px-20">
+                    <!-- Form Grid for Desktop -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12">
+                        <!-- Left Column -->
+                        <div class="space-y-4 md:space-y-6">
+                            <!-- JMÉNO -->
+                            <div class="mb-4 md:mb-0">
+                                <p class="inter-medium text-[14px] md:text-[15px] lg:text-[16px] text-black mb-2">JMÉNO
+                                </p>
+                                <input type="text"
+                                    class="w-full max-w-3xl md:max-w-none h-[30px] md:h-10 lg:h-[45px] bg-[#D9D9D9] rounded-md px-3 md:px-4 text-[14px] md:text-[15px] lg:text-[16px] focus:outline-none focus:ring-2 focus:ring-[#3D6FAD]"
+                                    placeholder="">
+                            </div>
+
+                            <!-- PŘÍJMENÍ -->
+                            <div class="mb-4 md:mb-0">
+                                <p class="inter-medium text-[14px] md:text-[15px] lg:text-[16px] text-black mb-2">
+                                    PŘÍJMENÍ</p>
+                                <input type="text"
+                                    class="w-full max-w-3xl md:max-w-none h-[30px] md:h-10 lg:h-[45px] bg-[#D9D9D9] rounded-md px-3 md:px-4 text-[14px] md:text-[15px] lg:text-[16px] focus:outline-none focus:ring-2 focus:ring-[#3D6FAD]"
+                                    placeholder="">
+                            </div>
+
+                            <!-- E-MAILOVÁ ADRESA -->
+                            <div class="mb-4 md:mb-0">
+                                <p class="inter-medium text-[14px] md:text-[15px] lg:text-[16px] text-black mb-2">
+                                    E-MAILOVÁ ADRESA</p>
+                                <input type="email"
+                                    class="w-full max-w-3xl md:max-w-none h-[30px] md:h-10 lg:h-[45px] bg-[#D9D9D9] rounded-md px-3 md:px-4 text-[14px] md:text-[15px] lg:text-[16px] focus:outline-none focus:ring-2 focus:ring-[#3D6FAD]"
+                                    placeholder="">
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="md:space-y-6">
+                            <!-- TELEFONNÍ ČÍSLO -->
+                            <div class="mb-4 mt-4 md:mt-0">
+                                <p class="inter-medium text-[14px] md:text-[15px] lg:text-[16px] text-black mb-2">
+                                    TELEFONNÍ ČÍSLO</p>
+                                <input type="tel"
+                                    class="w-full max-w-3xl md:max-w-none h-[30px] md:h-10 lg:h-[45px] bg-[#D9D9D9] rounded-md px-3 md:px-4 text-[14px] md:text-[15px] lg:text-[16px] focus:outline-none focus:ring-2 focus:ring-[#3D6FAD]"
+                                    placeholder="">
+                            </div>
+
+                            <!-- PROSÍM STRUČNĚ POPIŠTE -->
+                            <div class="mb-4 md:mb-0">
+                                <p class="inter-medium text-[14px] md:text-[15px] lg:text-[16px] text-black mb-2">PROSÍM
+                                    STRUČNĚ POPIŠTE, JAK VÁM MŮŽEME POMOCI</p>
+                                <textarea
+                                    class="w-full max-w-3xl md:max-w-none h-[102px] md:h-[150px] lg:h-[173px] bg-[#D9D9D9] rounded-md px-3 md:px-4 py-2 md:py-3 text-[14px] md:text-[15px] lg:text-[16px] focus:outline-none focus:ring-2 focus:ring-[#3D6FAD] resize-none"
+                                    placeholder=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JAKÝ TYP TERMÍNU -->
+                    <div class="mb-4 mt-4 md:mt-8 lg:mt-10">
+                        <p class="inter-medium text-[14px] md:text-[15px] lg:text-[16px] text-black mb-2 md:mb-4">JAKÝ
+                            TYP TERMÍNU SI PŘEJETE OBJEDNAT?</p>
+
+                        <!-- Appointment Type Options -->
+                        <div class="mt-4 flex flex-wrap gap-x-6 md:gap-x-8 lg:gap-x-10 gap-y-3 md:gap-y-4">
+                            <!-- Osobní návštěva -->
+                            <div id="option1" class="flex items-center gap-3 cursor-pointer" onclick="selectOption(1)">
+                                <div class="relative flex items-center justify-center">
+                                    <div id="outer1"
+                                        class="w-[22px] h-[22px] md:w-[26px] md:h-[26px] lg:w-7 lg:h-7 bg-[#D9D9D9] rounded-full flex items-center justify-center transition-colors duration-300">
+                                        <div
+                                            class="w-2.5 h-2.5 md:w-3 md:h-3 lg:w-3.5 lg:h-3.5 bg-[#032754] rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="inter-regular text-[13px] md:text-[15px] lg:text-[16px] text-black">Osobní
+                                    návštěva</span>
+                            </div>
+
+                            <!-- Telemedicínská konzultace -->
+                            <div id="option2" class="flex items-center gap-3 cursor-pointer" onclick="selectOption(2)">
+                                <div class="relative flex items-center justify-center">
+                                    <div id="outer2"
+                                        class="w-[22px] h-[22px] md:w-[26px] md:h-[26px] lg:w-7 lg:h-7 bg-[#D9D9D9] rounded-full flex items-center justify-center transition-colors duration-300">
+                                        <div
+                                            class="w-2.5 h-2.5 md:w-3 md:h-3 lg:w-3.5 lg:h-3.5 bg-[#032754] rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span
+                                    class="inter-regular text-[13px] md:text-[15px] lg:text-[16px] text-black">Telemedicínská
+                                    konzultace</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="mt-[23px] md:mt-10 lg:mt-12 flex justify-center">
+                        <button
+                            class="w-[135px] md:w-[180px] lg:w-[200px] h-[39px] md:h-12 lg:h-[52px] bg-[#75D1D9] text-white inter-bold text-[15px] md:text-[16px] lg:text-[18px] rounded-md hover:bg-[#75D1D9]/80 transition">
+                            ODESLAT
+                        </button>
+                    </div>
+
+                    <!-- Privacy Notice -->
+                    <p
+                        class="inter-regular text-[9px] md:text-[11px] lg:text-[12px] text-[#212121] mt-3 md:mt-6 lg:mt-8 leading-relaxed text-center max-w-[900px] mx-auto">
+                        Upozorňujeme, že Ortopedické rehabilitační centrum nemůže zaručit, že komunikace odeslaná přes
+                        internet je zabezpečená. To zahrnuje korespondenci odeslanou prostřednictvím tohoto formuláře
+                        nebo e-mailem. Pokud se s těmito riziky necítíte komfortně, můžete nás místo toho kontaktovat
+                        telefonicky.
+                    </p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="mt-2 md:mt-12 lg:mt-16 h-auto">
+            <div class="w-full h-2 md:h-3 bg-[#75D1D9]"></div>
+            <div class="w-full min-h-[670px] bg-[#1C1D1F] text-white py-8 md:py-12 lg:py-16">
+                <div class="flex justify-center gap-9 md:gap-10 lg:gap-12">
+                    <button class="cursor-pointer hover:opacity-80 transition h-[30px] w-[30px]">
+                        <img src="./public/instagram.png" alt="instagram" class="w-auto h-auto md:w-7 md:h-7">
+                    </button>
+                    <button class="cursor-pointer hover:opacity-80 transition h-[30px] w-[30px]">
+                        <img src="./public/facebook.png" alt="facebook" class="w-auto h-auto md:w-7 md:h-7">
+                    </button>
+                </div>
+
+                <div class="md:max-w-4xl lg:max-w-7xl mx-auto">
+                    <h2
+                        class="inter-semibold text-white text-[12px] md:text-[16px] lg:text-[18px] px-[55px] md:px-8 lg:px-12 pt-10 md:pt-12 lg:pt-16">
+                        O REHABILITAČNÍM CENTRU</h2>
+                    <p
+                        class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+                        Naše rehabilitační centrum se specializuje na komplexní péči o pohybový aparát a zotavení po
+                        úrazech,
+                        operacích
+                        i dlouhodobých zdravotních obtížích. Náš tým zkušených fyzioterapeutů, lékařů a specialistů
+                        kombinuje moderní
+                        léčebné postupy s individuálním přístupem ke každému pacientovi.
+                    </p>
+                    <p
+                        class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+                        Zaměřujeme se na léčbu bolestí zad, krční páteře, ramenních a kolenních kloubů, kyčlí, kotníků,
+                        zápěstí i
+                        drobnějších kloubů. Pomáháme také sportovcům vrátit se bezpečně zpět k tréninku a aktivnímu
+                        životnímu stylu.
+                    </p>
+                    <p
+                        class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+                        Naším cílem je nejen odstranit bolest, ale také obnovit plnou funkci těla, předcházet opakovaným
+                        problémům a
+                        naučit vás, jak o své tělo pečovat dlouhodobě. Věříme, že správná rehabilitace může výrazně
+                        zlepšit
+                        kvalitu
+                        života – bez ohledu na věk či úroveň pohybové aktivity.
+                    </p>
+                    <p
+                        class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+                        Jsme tu pro vás, ať už řešíte akutní zranění, chronickou bolest nebo se chcete vrátit k pohybu
+                        bez
+                        omezení.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <p
+                        class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 pt-8 md:pt-12 lg:pt-16 text-center">
+                        © Toto je studentský projekt / INFO
+                        SYI 2025 •</p>
+                    <p
+                        class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 text-center">
+                        Ortopedické rehabilitační centrum |</p>
+                    <p
+                        class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 text-center underline cursor-pointer hover:text-white transition">
+                        Zásady ochrany osobních údajů</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            let selectedOption = null;
+
+            function selectOption(optionNumber) {
+                // Reset all options
+                document.getElementById('outer1').style.backgroundColor = '#D9D9D9';
+                document.getElementById('outer2').style.backgroundColor = '#D9D9D9';
+
+                // Select the clicked option
+                document.getElementById('outer' + optionNumber).style.backgroundColor = '#3D6FAD';
+                selectedOption = optionNumber;
+            }
+
+            // Fullscreen menu functionality
+            const menuButton = document.getElementById('menuButton');
+            const fullscreenMenu = document.getElementById('fullscreenMenu');
+            const closeMenu = document.getElementById('closeMenu');
+
+            function openMenu() {
+                fullscreenMenu.classList.remove('-translate-y-full');
+                fullscreenMenu.classList.add('translate-y-0');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenuFunc() {
+                fullscreenMenu.classList.remove('translate-y-0');
+                fullscreenMenu.classList.add('-translate-y-full');
+                document.body.style.overflow = '';
+            }
+
+            menuButton.addEventListener('click', openMenu);
+            closeMenu.addEventListener('click', closeMenuFunc);
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const menuSections = document.querySelectorAll('.menu-section');
+
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase().trim();
+
+                menuSections.forEach(section => {
+                    const searchText = section.getAttribute('data-search-text');
+
+                    if (searchTerm === '' || searchText.includes(searchTerm)) {
+                        section.style.display = '';
+                        section.style.opacity = '1';
+                    } else {
+                        section.style.display = 'none';
+                        section.style.opacity = '0';
+                    }
+                });
+
+                // Show message if no results found
+                const visibleSections = Array.from(menuSections).filter(section => section.style.display !== 'none');
+
+                let noResultsMsg = document.getElementById('noResultsMsg');
+
+                if (visibleSections.length === 0 && searchTerm !== '') {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.id = 'noResultsMsg';
+                        noResultsMsg.className = 'px-6 py-8 text-center text-[#032754] inter-regular';
+                        noResultsMsg.textContent = 'Nebyly nalezeny žádné výsledky';
+                        document.getElementById('menuNav').appendChild(noResultsMsg);
+                    }
+                    noResultsMsg.style.display = 'block';
+                } else {
+                    if (noResultsMsg) {
+                        noResultsMsg.style.display = 'none';
+                    }
+                }
+            });
+
+            // O NÁS submenu toggle
+            const onasButton = document.getElementById('onasButton');
+            const onasSubmenu = document.getElementById('onasSubmenu');
+            const onasIconPath = document.getElementById('onasIconPath');
+            let isOnasOpen = false;
+
+            onasButton.addEventListener('click', function () {
+                isOnasOpen = !isOnasOpen;
+
+                if (isOnasOpen) {
+                    onasSubmenu.style.maxHeight = onasSubmenu.scrollHeight + 'px';
+                    onasIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+                } else {
+                    onasSubmenu.style.maxHeight = '0';
+                    onasIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+                }
+            });
+
+            // ONEMOCNĚNÍ submenu toggle
+            const onemocneniButton = document.getElementById('onemocneniButton');
+            const onemocneniSubmenu = document.getElementById('onemocneniSubmenu');
+            const onemocneniIconPath = document.getElementById('onemocneniIconPath');
+            let isOnemocneniOpen = false;
+
+            onemocneniButton.addEventListener('click', function () {
+                isOnemocneniOpen = !isOnemocneniOpen;
+
+                if (isOnemocneniOpen) {
+                    onemocneniSubmenu.style.maxHeight = onemocneniSubmenu.scrollHeight + 'px';
+                    onemocneniIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+                } else {
+                    onemocneniSubmenu.style.maxHeight = '0';
+                    onemocneniIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+                }
+            });
+
+            // LÉČBA submenu toggle
+            const lecbaButton = document.getElementById('lecbaButton');
+            const lecbaSubmenu = document.getElementById('lecbaSubmenu');
+            const lecbaIconPath = document.getElementById('lecbaIconPath');
+            let isLecbaOpen = false;
+
+            lecbaButton.addEventListener('click', function () {
+                isLecbaOpen = !isLecbaOpen;
+
+                if (isLecbaOpen) {
+                    lecbaSubmenu.style.maxHeight = lecbaSubmenu.scrollHeight + 'px';
+                    lecbaIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+                } else {
+                    lecbaSubmenu.style.maxHeight = '0';
+                    lecbaIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+                }
+            });
+
+            // INFORMACE submenu toggle
+            const informaceButton = document.getElementById('informaceButton');
+            const informaceSubmenu = document.getElementById('informaceSubmenu');
+            const informaceIconPath = document.getElementById('informaceIconPath');
+            let isInformaceOpen = false;
+
+            informaceButton.addEventListener('click', function () {
+                isInformaceOpen = !isInformaceOpen;
+
+                if (isInformaceOpen) {
+                    informaceSubmenu.style.maxHeight = informaceSubmenu.scrollHeight + 'px';
+                    informaceIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+                } else {
+                    informaceSubmenu.style.maxHeight = '0';
+                    informaceIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+                }
+            });
+        </script>
+
+    </body>
+
+</html>

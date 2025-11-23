@@ -13,42 +13,186 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
 
-  <script type="module" src="/src/main.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#032754',
+            secondary: '#62A8C6',
+            accent: '#84C9FE',
+            blue: '#3D6FAD',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    /* Poppins Font Styles */
+    .poppins-thin {
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .poppins-extralight {
+      font-family: "Poppins", sans-serif;
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    .poppins-light {
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .poppins-regular {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .poppins-medium {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .poppins-semibold {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    .poppins-bold {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .poppins-extrabold {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .poppins-black {
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    /* Inter Font Styles */
+    .inter {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    .inter-thin {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .inter-extralight {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    .inter-light {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .inter-regular {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .inter-medium {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .inter-semibold {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    .inter-bold {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .inter-extrabold {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .inter-black {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 900;
+      font-style: normal;
+    }
+  </style>
 </head>
 
 <body class="bg-[#EAEAEA] text-black">
-  <!-- Navigation -->
-  <nav class="bg-[#EAEAEA] h-[124px] md:h-auto sticky top-0 z-50"
-    style="box-shadow: 0 10px 40px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
+  <!-- Header -->
+  <header class="bg-[#EAEAEA] h-[124px] md:h-auto sticky top-0 z-50"
+    style="box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.15);">
     <div class="max-w-[1920px] mx-auto px-4 md:px-6 py-4 md:py-6 lg:px-12">
       <div class="flex items-center justify-between pt-12 md:pt-0 px-0">
         <!-- Logo -->
         <div class="shrink-0">
-          <img src="/logo.png" alt="Logo" class="w-[148px] h-[49px] object-contain">
+          <a href="./index.html" class="block hover:opacity-80 transition">
+            <img src="./public/logo.png" alt="Logo" class="w-[148px] h-[49px] object-contain">
+          </a>
         </div>
 
         <!-- Desktop Navigation Menu (hidden on mobile) -->
-        <div class="hidden lg:flex items-center space-x-8">
+        <nav class="hidden lg:flex items-center space-x-8">
           <a href="/" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Domů</a>
-          <a href="/objednat.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Objednat
+          <a href="./objednat.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Objednat
             termín</a>
-          <a href="/ochrana.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Ochrana údajů</a>
-          <a href="/tym.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Náš tým</a>
-          <a href="/about.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">About</a>
-          <a href="/hodnoceni.html" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Hodnocení</a>
-        </div>
+          <a href="/" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">Náš tým</a>
+          <a href="/" class="text-[#032754] hover:text-[#62A8C6] transition font-medium">O nás</a>
+        </nav>
 
         <!-- Right side buttons -->
         <div class="flex items-center space-x-2 md:space-x-4">
           <!-- Phone button -->
-          <button class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition">
-            <img src="/phoneButton.png" alt="Phone" class="w-full h-full object-contain">
+          <button class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition" aria-label="Zavolat">
+            <img src="./public/phoneButton.png" alt="Phone" class="w-full h-full object-contain rounded-md">
           </button>
 
           <!-- Calendar button -->
-          <button class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition">
-            <img src="/calendar.png" alt="Calendar" class="w-full h-full object-contain">
-          </button>
+          <a href="./objednat.html" class="w-[35px] h-[35px] cursor-pointer hover:opacity-80 transition block"
+            aria-label="Objednat termín">
+            <img src="./public/calendar.png" alt="Calendar" class="w-full h-full object-contain rounded-md">
+          </a>
 
           <!-- Language switcher -->
           <div
@@ -64,7 +208,8 @@
 
           <!-- Hamburger menu -->
           <button id="menuButton"
-            class="w-[35px] h-[35px] flex flex-col font-black items-center justify-center space-y-1 transition cursor-pointer hover:opacity-70">
+            class="w-[35px] h-[35px] flex flex-col font-black items-center justify-center space-y-1 transition cursor-pointer hover:opacity-70"
+            aria-label="Otevřít menu">
             <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
             <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
             <span class="w-6 h-[3px] bg-[#032754] transition-all duration-300"></span>
@@ -72,18 +217,20 @@
         </div>
       </div>
     </div>
-  </nav>
+  </header>
 
   <!-- Full Screen Menu Overlay -->
-  <div id="fullscreenMenu"
-    class="fixed inset-0 bg-[#EAEAEA] z-60 transform -translate-y-full transition-transform duration-300">
+  <aside id="fullscreenMenu"
+    class="fixed inset-0 bg-[#EAEAEA] transform -translate-y-full transition-transform duration-300"
+    style="z-index: 10000;" aria-label="Hlavní navigační menu">
     <div class="h-full overflow-y-auto">
       <!-- Header with close button -->
       <div class="flex justify-end p-7">
         <button id="closeMenu"
-          class="flex items-center mt-[29px] cursor-pointer space-x-2 text-[#032754] hover:text-[#62A8C6] transition">
+          class="flex items-center mt-[29px] cursor-pointer space-x-2 text-[#032754] hover:text-[#62A8C6] transition"
+          aria-label="Zavřít menu">
           <span class="font text-[14px]">Zavřít</span>
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -92,10 +239,12 @@
       <!-- Search bar -->
       <div class="px-6 mb-11 mt-[7px]">
         <div class="relative">
-          <input type="text" placeholder="Hledat"
-            class="w-full h-[35px] px-4 py-3 bg-[#e3e3e7] rounded-[53px] text-[#032754] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#75D1D9]">
+          <label for="searchInput" class="sr-only">Hledat v menu</label>
+          <input id="searchInput" type="search" placeholder="Hledat"
+            class="w-full h-[35px] px-4 py-3 bg-[#e3e3e7] rounded-[53px] text-[#032754] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#75D1D9]"
+            aria-label="Vyhledávání v menu">
           <svg class="absolute cursor-pointer right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#032754]"
-            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -103,78 +252,191 @@
       </div>
 
       <!-- Menu items -->
-      <nav class="px-6 space-y-0">
+      <nav id="menuNav" class="px-6 space-y-0" aria-label="Kategorie služeb">
         <!-- O NÁS -->
-        <div class="border-b-2 border-[#798AAC]">
-          <button
+        <div class="border-b-2 border-[#798AAC] menu-section"
+          data-search-text="o nás o ortopedickém zdravotním centru seznamte se s týmem hodnocení pacientů">
+          <button id="onasButton"
             class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
             <span class="font-semibold text-[16px]">O NÁS</span>
-            <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <svg id="onasIcon" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path id="onasIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m8-8H4" />
             </svg>
           </button>
+
+          <!-- Submenu Container -->
+          <div id="onasSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                O ORTOPEDICKÉM ZDRAVOTNÍM CENTRU
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                SEZNAMTE SE S TÝMEM
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                HODNOCENÍ PACIENTŮ
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- ONEMOCNĚNÍ -->
-        <div class="border-b-2 border-[#798AAC]">
-          <button
+        <div class="border-b-2 border-[#798AAC] menu-section"
+          data-search-text="onemocnění krk ramena záda ruka zápěstí loket kyčel pánev noha koleno kotník chodidlo">
+          <button id="onemocneniButton"
             class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
             <span class="font-semibold text-[16px]">ONEMOCNĚNÍ</span>
-            <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <svg id="onemocneniIcon" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path id="onemocneniIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m8-8H4" />
             </svg>
           </button>
+
+          <!-- Submenu Container -->
+          <div id="onemocneniSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                KRK
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                RAMENA
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                ZÁDA
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                RUKA, ZÁPĚSTÍ A LOKET
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                KYČEL A PÁNEV
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                NOHA
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                KOLENO
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                KOTNÍK A CHODIDLO
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- LÉČBA -->
-        <div class="border-b-2 border-[#798AAC]">
-          <button
+        <div class="border-b-2 border-[#798AAC] menu-section"
+          data-search-text="léčba komplexní ortopedie sportovní medicína kompletní péče o páteř dětská ortopedie">
+          <button id="lecbaButton"
             class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
             <span class="font-semibold text-[16px]">LÉČBA</span>
-            <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <svg id="lecbaIcon" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path id="lecbaIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m8-8H4" />
             </svg>
           </button>
+
+          <!-- Submenu Container -->
+          <div id="lecbaSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                KOMPLEXNÍ ORTOPEDIE
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                SPORTOVNÍ MEDICÍNA
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                KOMPLETNÍ PÉČE O PÁTEŘ
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                DĚTSKÁ ORTOPEDIE
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- INFORMACE -->
-        <div class="border-b-2 border-[#798AAC]">
-          <button
+        <div class="border-b-2 border-[#798AAC] menu-section"
+          data-search-text="informace co očekávat osobní online návštěvy druhé lékařské posudky pojištění">
+          <button id="informaceButton"
             class="w-full flex items-center justify-between py-4 px-[18px] text-left text-[#032754] hover:text-[#62A8C6] transition group cursor-pointer">
             <span class="font-semibold text-[16px]">INFORMACE</span>
-            <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <svg id="informaceIcon" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path id="informaceIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m8-8H4" />
             </svg>
           </button>
+
+          <!-- Submenu Container -->
+          <div id="informaceSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="bg-[#798AAC] py-4 px-[18px] space-y-3">
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                CO OČEKÁVAT
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                OSOBNÍ A ONLINE NÁVŠTĚVY
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                DRUHÉ LÉKAŘSKÉ POSUDKY
+              </button>
+              <button
+                class="w-full text-left text-white inter-semibold text-[15px] hover:text-[#84C9FE] transition py-2 cursor-pointer">
+                POJIŠTĚNÍ
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
-  </div>
+  </aside>
 
   <!-- Main Content -->
   <main class="mt-[30px]">
     <!-- Hero Section -->
-    <div class="max-w-[1920px] mx-auto flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-16 md:px-6 lg:px-50">
+    <section
+      class="max-w-[1920px] mx-auto flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-16 md:px-12 lg:px-50">
       <!-- Banner Image -->
       <div class="flex justify-center md:justify-start md:shrink-0">
-        <img class="w-full max-w-md md:max-w-sm lg:max-w-md xl:max-w-lg" src="/banner.png" alt="banner">
+        <img class="w-full max-w-md md:max-w-sm lg:max-w-md" src="./public/banner.png"
+          alt="Rehabilitační centrum banner">
       </div>
 
       <!-- Text -->
       <div class="px-4 md:px-0 md:flex-1">
-        <h1 class="text-center md:text-left text-[22px] md:text-2xl lg:text-[32px] poppins-regular md:leading-relaxed lg:leading-relaxed"
+        <h1
+          class="text-center md:text-left text-[22px] md:text-2xl lg:text-[32px] poppins-regular md:leading-relaxed lg:leading-relaxed"
           style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 0px 2px 20px rgba(0, 0, 0, 0.3);">
           Přední rehabilitační centrum v České republice s nejmodernějšími technologiemi a týmem zkušených odborníků
         </h1>
       </div>
-    </div>
+    </section>
 
-    <!-- Blue Section with Buttons -->
-    <div class="mt-4 md:mt-8 lg:mt-10 bg-[#3D6FAD] w-[335px] md:w-[600px] lg:w-[650px] h-[27px] md:h-[50px] lg:h-[60px] mx-auto flex items-center justify-center rounded-md md:rounded-lg lg:rounded-xl shadow-md">
+    <!-- Service Categories Navigation -->
+    <nav
+      class="mt-4 md:mt-8 lg:mt-10 bg-[#3D6FAD] w-[335px] md:w-[600px] lg:w-[650px] h-[27px] md:h-[50px] lg:h-[60px] mx-auto flex items-center justify-center rounded-md md:rounded-lg lg:rounded-xl shadow-md"
+      aria-label="Rychlé odkazy na služby">
       <div class="flex items-center justify-center gap-0">
         <!-- REHABILITACE Button -->
         <button
@@ -183,7 +445,8 @@
         </button>
 
         <!-- Dot Separator -->
-        <div class="w-1 h-1 md:w-2 md:h-2 lg:w-2 lg:h-2 bg-white rounded-full mx-4 md:mx-8 lg:mx-10 xl:mx-12"></div>
+        <div class="w-1 h-1 md:w-2 md:h-2 lg:w-2 lg:h-2 bg-white rounded-full mx-4 md:mx-8 lg:mx-10 xl:mx-12"
+          aria-hidden="true"></div>
 
         <!-- MASÁŽE Button -->
         <button
@@ -192,7 +455,8 @@
         </button>
 
         <!-- Dot Separator -->
-        <div class="w-1 h-1 md:w-2 md:h-2 lg:w-2 lg:h-2 bg-white rounded-full mx-4 md:mx-8 lg:mx-10 xl:mx-12"></div>
+        <div class="w-1 h-1 md:w-2 md:h-2 lg:w-2 lg:h-2 bg-white rounded-full mx-4 md:mx-8 lg:mx-10 xl:mx-12"
+          aria-hidden="true"></div>
 
         <!-- K ORTOPEDOVI Button -->
         <button
@@ -200,141 +464,174 @@
           K ORTOPEDOVI
         </button>
       </div>
-    </div>
-    
-    <!-- Text and Body Section -->
-    <div class="mt-6 md:mt-10 lg:mt-16 md:px-6 lg:px-12 lg:flex lg:items-start lg:gap-16 xl:gap-20 lg:max-w-7xl xl:max-w-[1400px] lg:mx-auto">
+    </nav>
+
+    <!-- Interactive Body Section -->
+    <section
+      class="mt-6 md:mt-10 lg:mt-16 md:px-6 lg:px-12 lg:flex lg:items-start lg:gap-16 xl:gap-20 lg:max-w-7xl xl:max-w-[1400px] lg:mx-auto">
       <!-- Text Section -->
       <div class="lg:flex-1 lg:pt-12 xl:pt-16">
-        <h2 class="inter-bold text-[15px] md:text-xl lg:text-2xl xl:text-3xl text-center lg:text-left px-4 md:px-0 lg:px-0 md:leading-relaxed lg:leading-relaxed">AŤ UŽ VÁS BOLÍ COKOLIV, <span class="lg:block">MY VÁM POMŮŽEME.</span></h2>
-        <h3 class="inter-regular text-[14px] md:text-base lg:text-lg xl:text-xl text-center lg:text-left px-14 md:px-0 lg:px-0 mt-2 md:mt-4 lg:mt-8 md:leading-relaxed lg:leading-relaxed xl:leading-relaxed">Žádné zranění není tak
+        <h2
+          class="inter-bold text-[15px] md:text-xl lg:text-2xl xl:text-3xl text-center lg:text-left px-24 md:px-0 lg:px-0 md:leading-relaxed lg:leading-relaxed">
+          AŤ UŽ VÁS BOLÍ COKOLIV, <span class="lg:block">MY VÁM POMŮŽEME.</span></h2>
+        <h3
+          class="inter-regular text-[14px] md:text-base lg:text-lg xl:text-xl text-center lg:text-left px-14 md:px-0 lg:px-0 mt-2 md:mt-4 lg:mt-8 md:leading-relaxed lg:leading-relaxed xl:leading-relaxed">
+          Žádné zranění není tak
           malé, abyste nemohli očekávat špičkovou ortopedickou péči. Ať už máte nakopnutý prst na noze nebo chronický
           problém s páteří, vaše péče je pro nás prioritou.</h3>
       </div>
 
       <!-- Body Image with Overlay -->
       <div class="relative flex justify-center px-2 mt-6 lg:mt-0 lg:flex-1">
-      <!-- Gradient overlay at the top -->
-      <div class="absolute top-0 left-0 right-0 h-3 pointer-events-none z-10"
-        style="background: linear-gradient(to bottom, #EAEAEA 0%, #EAEAEA 20%, rgba(234, 234, 234, 0.5) 80%, rgba(234, 234, 234, 0) 100%);">
+        <!-- Gradient overlay at the top -->
+        <div class="absolute top-0 left-0 right-0 h-3 pointer-events-none z-10"
+          style="background: linear-gradient(to bottom, #EAEAEA 0%, #EAEAEA 20%, rgba(234, 234, 234, 0.5) 80%, rgba(234, 234, 234, 0) 100%);">
+        </div>
+
+        <!-- Image wrapper to anchor percentage positioning -->
+        <div class="relative inline-block w-full max-w-md md:max-w-lg lg:max-w-xl">
+          <img class="opacity-100 w-full" src="./public/body.png" alt="body">
+
+          <!-- KRK -->
+          <button id="krkButton"
+            class="absolute top-[2.5%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">KRK</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="krkIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- RAMENA -->
+          <button id="ramenaButton"
+            class="absolute top-[15%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">RAMENA</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="ramenaIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- ZÁDA -->
+          <button id="zadaButton"
+            class="absolute top-[27.5%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">ZÁDA</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="zadaIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- RUKA, ZÁPĚSTÍ A LOKET -->
+          <button id="rukaButton"
+            class="absolute top-[40%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">RUKA, ZÁPĚSTÍ A LOKET</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="rukaIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- KYČEL A PÁNEV -->
+          <button id="kycelButton"
+            class="absolute top-[52.5%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">KYČEL A PÁNEV</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="kycelIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- NOHA -->
+          <button id="nohaButton"
+            class="absolute top-[65%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">NOHA</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="nohaIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- KOLENO -->
+          <button id="kolenoButton"
+            class="absolute top-[77.5%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">KOLENO</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="kolenoIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- KOTNÍK A CHODIDLO -->
+          <button id="kotnikButton"
+            class="absolute top-[90%] left-1/2 -translate-x-1/2 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer duration-300"
+            style="background-color: rgba(132, 201, 254, 0.78);"
+            onmouseover="this.style.backgroundColor='rgba(61, 111, 173, 0.5)'"
+            onmouseout="this.style.backgroundColor='rgba(132, 201, 254, 0.78)'">
+            <div class="inter-light text-[12px] text-left">KOTNÍK A CHODIDLO</div>
+            <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
+              <svg id="kotnikIcon" class="w-2.5 h-2.5 transition-transform duration-300" viewBox="0 0 10 10" fill="none"
+                stroke="#D9D9D9" stroke-width="2" stroke-linecap="round">
+                <path d="M5 1v8M1 5h8" />
+              </svg>
+            </div>
+          </button>
+        </div>
       </div>
+    </section>
+    <!-- End of Interactive Body Section -->
 
-      <!-- Image wrapper to anchor percentage positioning -->
-      <div class="relative inline-block w-full max-w-md md:max-w-lg lg:max-w-xl">
-        <img class="opacity-100 w-full" src="/body.png" alt="body">
-
-        <!-- KRK -->
-        <button
-          class="absolute top-[2.5%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">KRK</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- RAMENA -->
-        <button
-          class="absolute top-[15%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">RAMENA</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- ZÁDA -->
-        <button
-          class="absolute top-[27.5%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">ZÁDA</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- RUKA, ZÁPĚSTÍ A LOKET -->
-        <button
-          class="absolute top-[40%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">RUKA, ZÁPĚSTÍ A LOKET</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- KYČEL A PÁNEV -->
-        <button
-          class="absolute top-[52.5%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">KYČEL A PÁNEV</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- NOHA -->
-        <button
-          class="absolute top-[65%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">NOHA</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- KOLENO -->
-        <button
-          class="absolute top-[77.5%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">KOLENO</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-
-        <!-- KOTNÍK A CHODIDLO -->
-        <button
-          class="absolute top-[90%] left-1/2 -translate-x-1/2 bg-[#84C9FE]/78 w-[80%] h-[30px] flex items-center justify-start rounded-sm z-20 pl-[22px] cursor-pointer hover:bg-[#3D6FAD]/50 duration-300">
-          <div class="inter-light text-[12px] text-left">KOTNÍK A CHODIDLO</div>
-          <div class="w-4 h-4 bg-[#032754] rounded-full flex items-center justify-center ml-auto mr-1.5">
-            <svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
-              stroke-linecap="round">
-              <path d="M5 1v8M1 5h8" />
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-    </div>
-    <!-- End of Text and Body Section -->
-
+    <!-- Call to Action Section -->
     <section
-      class="relative bg-[#032754] w-screen py-12 md:py-20 mt-[74px] md:mt-20 lg:mt-24 flex flex-col items-center justify-center px-4 md:left-1/2 md:-translate-x-1/2">
-      <h2 class="inter-bold text-white text-[15px] md:text-[22px] lg:text-[26px] text-center mb-6 md:mb-10 lg:mb-14 max-w-2xl md:max-w-3xl lg:max-w-4xl md:leading-relaxed lg:leading-relaxed">
+      class="relative bg-[#032754] w-screen py-8 md:py-16 mt-[74px] md:mt-20 lg:mt-24 flex flex-col items-center justify-center px-12 md:left-1/2 md:-translate-x-1/2">
+      <h2
+        class="inter-bold text-white text-[15px] md:text-[22px] lg:text-[26px] text-center mb-6 md:mb-10 lg:mb-14 max-w-2xl md:max-w-3xl lg:max-w-4xl md:leading-relaxed lg:leading-relaxed">
         CÍTIT SE DOBŘE BY NEMĚLO ZNAMENAT ČEKAT. TERMÍNY K DISPOZICI IHNED.</h2>
-      <button
-        class="bg-[#3D6FAD] text-white inter-bold text-[12px] md:text-[18px] rounded-sm w-40 md:w-[220px] lg:w-[260px] h-7 md:h-12 lg:h-14 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300">OBJEDNAT
-        TERMÍN</button>
+      <a href="./objednat.html"
+        class="bg-[#3D6FAD] text-white inter-bold text-[12px] md:text-[18px] rounded-sm w-40 md:w-[220px] lg:w-[260px] h-7 md:h-12 lg:h-14 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 inline-flex items-center justify-center">OBJEDNAT
+        TERMÍN</a>
     </section>
 
     <section class="text-center mt-6 md:mt-12 lg:mt-20 px-4 md:px-6 lg:px-12 h-full">
       <h2 class="inter-bold text-[15px] md:text-[24px] lg:text-[30px]">NAŠE ŠKÁLA PÉČE</h2>
-      <h3 class="inter-semibold text-[12px] md:text-[17px] lg:text-[20px] mt-3 md:mt-6 lg:mt-8 max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto md:leading-relaxed lg:leading-relaxed">Od zranění až po chronická onemocnění nabízí Ortopedické rehabilitační
+      <h3
+        class="inter-semibold text-[12px] md:text-[17px] lg:text-[20px] mt-3 md:mt-6 lg:mt-8 max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto md:leading-relaxed lg:leading-relaxed">
+        Od zranění až po chronická onemocnění nabízí Ortopedické rehabilitační
         centrum pokročilá, minimálně invazivní řešení pro širokou škálu ortopedických potřeb</h3>
 
       <!-- Cards Grid -->
@@ -343,13 +640,14 @@
         <!-- Card 1: KOMPLEXNÍ ORTODEDIE -->
         <div
           class="bg-white rounded-md h-[100px] md:h-[200px] lg:h-[260px] xl:h-[280px] transition-all duration-300 hover:scale-105 cursor-pointer"
-          style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
-          <div class="overflow-hidden rounded-t-md">
-            <img src="/komplex.png" alt="Komplexní ortopédie"
-              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover"
-              style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
+          style="box-shadow: 0 5px 3px 1px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
+          <div>
+            <img src="./public/komplex.png" alt="Komplexní ortopédie"
+              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover rounded-t-md"
+              style="box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
           </div>
-          <div class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3">
+          <div
+            class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3 rounded-b-md">
             <p class="inter-semibold text-black text-[8px] md:text-[14px] lg:text-[17px] xl:text-[18px] text-center"
               style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 0px 2px 20px rgba(0, 0, 0, 0.3);">KOMPLEXNÍ ORTOPÉDIE
             </p>
@@ -358,14 +656,15 @@
 
         <!-- Card 2: SPORTOVNÍ MEDICÍNA -->
         <div
-          class="bg-white rounded-md h-[100px] md:h-[200px] lg:h-[260px] xl:h-[280px] transition-all duration-300 hover:scale-105 cursor-pointer"
-          style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
-          <div class="overflow-hidden rounded-t-md">
-            <img src="/sport.png" alt="Sportovní medicína"
-              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover"
-              style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
+          class="bg-white rounded-lg h-[100px] md:h-[200px] lg:h-[260px] xl:h-[280px] transition-all duration-300 hover:scale-105 cursor-pointer"
+          style="box-shadow: 0 5px 3px 1px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
+          <div>
+            <img src="./public/sport.png" alt="Sportovní medicína"
+              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover rounded-t-md"
+              style="box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
           </div>
-          <div class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3">
+          <div
+            class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3 rounded-b-md">
             <p class="inter-semibold text-black text-[8px] md:text-[14px] lg:text-[17px] xl:text-[18px] text-center"
               style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 0px 2px 20px rgba(0, 0, 0, 0.3);">SPORTOVNÍ MEDICÍNA
             </p>
@@ -375,13 +674,14 @@
         <!-- Card 3: KOMPLEXNÍ PÉČE O PÁTEŘ -->
         <div
           class="bg-white rounded-md h-[100px] md:h-[200px] lg:h-[260px] xl:h-[280px] transition-all duration-300 hover:scale-105 cursor-pointer"
-          style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
-          <div class="overflow-hidden rounded-t-md">
-            <img src="/pater.png" alt="Komplexní péče o páteř"
-              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover"
-              style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
+          style="box-shadow: 0 5px 3px 1px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
+          <div>
+            <img src="./public/pater.png" alt="Komplexní péče o páteř"
+              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover rounded-t-md"
+              style="box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
           </div>
-          <div class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3">
+          <div
+            class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3 rounded-b-md">
             <p class="inter-semibold text-black text-[8px] md:text-[14px] lg:text-[17px] xl:text-[18px] text-center"
               style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 0px 2px 20px rgba(0, 0, 0, 0.3);">KOMPLEXNÍ PÉČE O
               PÁTEŘ</p>
@@ -391,13 +691,14 @@
         <!-- Card 4: PEDIATRICKÁ ORTOPEDIE -->
         <div
           class="bg-white rounded-md h-[100px] md:h-[200px] lg:h-[260px] xl:h-[280px] transition-all duration-300 hover:scale-105 cursor-pointer"
-          style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
-          <div class="overflow-hidden rounded-t-md">
-            <img src="/pediatr.png" alt="Pediatrická ortopedie"
-              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover"
-              style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);">
+          style="box-shadow: 0 5px 3px 1px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.2);">
+          <div>
+            <img src="./public/pediatr.png" alt="Pediatrická ortopedie"
+              class="w-full h-[76px] md:h-[140px] lg:h-[185px] xl:h-[200px] object-cover rounded-t-md"
+              style="box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.15), 0px 2px 20px rgba(0, 0, 0, 0.3);">
           </div>
-          <div class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3">
+          <div
+            class="bg-[#D9D9D9] h-6 md:h-[60px] lg:h-[75px] xl:h-20 flex items-center justify-center px-3 rounded-b-md">
             <p class="inter-semibold text-black text-[8px] md:text-[14px] lg:text-[17px] xl:text-[18px] text-center"
               style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 0px 2px 20px rgba(0, 0, 0, 0.3);">PEDIATRICKÁ
               ORTOPEDIE</p>
@@ -408,7 +709,8 @@
 
     <section class="mt-[50px] md:mt-20 lg:mt-28 xl:mt-32 ml-7 md:ml-12 lg:ml-20 xl:ml-24">
       <h2 class="inter-bold text-[13px] md:text-[22px] lg:text-[26px]">PROČ NÁM PACIENTI DŮVĚŘUJÍ</h2>
-      <div class="w-[291px] md:w-[520px] lg:w-[680px] h-auto md:h-auto lg:h-auto bg-white mt-[26px] md:mt-10 lg:mt-12 p-4 md:p-7 lg:p-10 xl:p-12 rounded-lg shadow-lg">
+      <div
+        class="w-[291px] md:w-[520px] lg:w-[680px] h-auto md:h-auto lg:h-auto bg-white mt-[26px] md:mt-10 lg:mt-12 p-4 md:p-7 lg:p-10 xl:p-12 rounded-lg shadow-lg">
         <div class="flex gap-1 md:gap-2 lg:gap-2">
           <!-- Star 1 -->
           <svg class="w-3 h-3 md:w-5 md:h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="#FFA500">
@@ -431,52 +733,346 @@
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
         </div>
-        <p class="inter-light text-[9px] md:text-[14px] lg:text-[16px] mt-2 md:mt-4 lg:mt-5 leading-relaxed">„Přístup, jaký už se dnes jen tak nevidí. Lékař se mnou prošel
+        <p class="inter-light text-[9px] md:text-[14px] lg:text-[16px] mt-2 md:mt-4 lg:mt-5 leading-relaxed">„Přístup,
+          jaký už se dnes jen tak nevidí. Lékař se mnou prošel
           všechny možnosti léčby, nic nenutil a opravdu poslouchal. Po rehabilitacích a domácích cvičeních se bolest
-          ramene výrazně zlepšila. Doporučuji všem, kdo hledají kvalitní péči."<br><span class="mt-2 inline-block">— Tomáš S.</span></p>
+          ramene výrazně zlepšila. Doporučuji všem, kdo hledají kvalitní péči."<br><span class="mt-2 inline-block">—
+            Tomáš S.</span></p>
       </div>
     </section>
 
   </main>
 
+  <!-- KRK Modal -->
+  <div id="krkModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">KRK</h3>
+        <button id="closeKrkModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Od vyhřezlých plotének a skřípnutých nervů až po podvrtnutí a natažení svalů – můžete důvěřovat našemu
+          ortopedickému týmu, že určí příčinu vaší bolesti a pomůže vám uzdravit se.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RAMENA Modal -->
+  <div id="ramenaModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">RAMENA</h3>
+        <button id="closeRamenaModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Od natržení rotátorové manžety až po vykloubení – náš zkušený ortopedický tým dokáže diagnostikovat a léčit
+          širokou škálu onemocnění ramene.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZÁDA Modal -->
+  <div id="zadaModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">ZÁDA</h3>
+        <button id="closeZadaModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Od drobných potíží až po vážnější problémy – bolesti zad, krku a páteře jsou běžné a patří mezi nejčastější
+          důvody, proč lidé vyhledávají ortopedického specialistu.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUKA Modal -->
+  <div id="rukaModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">RUKA, ZÁPĚSTÍ A LOKET</h3>
+        <button id="closeRukaModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Protože lokty, zápěstí a ruce používáme téměř při každé činnosti, jsou tyto tři části těla velmi náchylné k
+          bolestem způsobeným zraněními i běžným zatížením.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- KYČEL Modal -->
+  <div id="kycelModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">KYČEL A PÁNEV</h3>
+        <button id="closeKycelModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Společně tvoří pánevní kosti a kyčelní kloub výchozí bod dolní poloviny těla. Onemocnění nebo úraz mohou
+          způsobit bolest i při běžných denních činnostech.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOHA Modal -->
+  <div id="nohaModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">NOHA</h3>
+        <button id="closeNohaModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Bolest nohou je často způsobena běžným opotřebením, zraněními nebo nadměrným zatížením. Některé formy bolesti
+          nohou jsou způsobeny problémy s krevním oběhem a krevními sraženinami.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOLENO Modal -->
+  <div id="kolenoModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">KOLENO</h3>
+        <button id="closeKolenoModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Ať už jde o přetržený přední zkřížený vaz nebo meniskus v důsledku sportovního zranění, nebo o přetrvávající
+          bolest způsobenou chronickou artritidou – naši ortopedičtí chirurgové jsou tu, aby vám pomohli.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOTNÍK Modal -->
+  <div id="kotnikModal" class="fixed inset-0 hidden px-4"
+    style="display: none; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85); z-index: 9999;">
+    <div
+      class="bg-[#EAEAEA] w-[300px] md:w-[450px] h-[179px] md:h-60 rounded-lg shadow-2xl relative p-4 md:p-6 flex flex-col">
+      <!-- Header with title and close button -->
+      <div class="flex items-start justify-between mb-3 md:mb-4">
+        <h3 class="inter-bold text-[17px] md:text-[22px] text-[#032754]">KOTNÍK A CHODIDLO</h3>
+        <button id="closeKotnikModal"
+          class="w-4 h-4 md:w-5 md:h-5 bg-[#032754] rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+          <svg class="w-2.5 h-2.5 md:w-3 md:h-3" viewBox="0 0 10 10" fill="none" stroke="#D9D9D9" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M2 2l6 6M8 2l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content text -->
+      <div class="flex-1 overflow-y-auto mb-3 md:mb-5">
+        <p class="poppins-regular text-[11px] md:text-[14px] text-black leading-relaxed">
+          Ačkoli jsou vaše kotníky a chodidla dostatečně silné na to, aby unesly váhu vašeho těla, jsou také snadno
+          zranitelné. I drobná zranění kotníku a chodidla mohou být bolestivá.
+        </p>
+      </div>
+
+      <!-- Button at bottom center -->
+      <div class="flex justify-center">
+        <a href="./objednat.html"
+          class="bg-[#3D6FAD] text-white inter-bold text-[10px] md:text-[14px] rounded-sm w-32 md:w-44 h-6 md:h-9 cursor-pointer hover:bg-[#3D6FAD]/50 transition-all duration-300 flex items-center justify-center">
+          OBJEDNAT TERMÍN
+        </a>
+      </div>
+    </div>
+  </div>
+
   <footer class="mt-9 h-auto">
     <div class="w-full h-2 bg-[#75D1D9]"></div>
     <div class="w-full min-h-[670px] bg-[#1C1D1F] text-white py-8 md:py-12 lg:py-16">
       <div class="flex justify-center gap-9 md:gap-10 lg:gap-12">
-        <button class="cursor-pointer hover:opacity-80 transition">
-          <img src="/instagram.png" alt="instagram" class="w-auto h-auto md:w-7 md:h-7">
+        <button class="cursor-pointer hover:opacity-80 transition h-[30px] w-[30px]">
+          <img src="./public/instagram.png" alt="instagram" class="w-auto h-auto md:w-7 md:h-7">
         </button>
-        <button class="cursor-pointer hover:opacity-80 transition">
-          <img src="/facebook.png" alt="facebook" class="w-auto h-auto md:w-7 md:h-7">
+        <button class="cursor-pointer hover:opacity-80 transition h-[30px] w-[30px]">
+          <img src="./public/facebook.png" alt="facebook" class="w-auto h-auto md:w-7 md:h-7">
         </button>
       </div>
 
       <div class="md:max-w-4xl lg:max-w-7xl mx-auto">
-        <h2 class="inter-semibold text-white text-[12px] md:text-[16px] lg:text-[18px] px-[55px] md:px-0 pt-10 md:pt-12 lg:pt-16">O REHABILITAČNÍM CENTRU</h2>
-        <p class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-0 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
-          Naše rehabilitační centrum se specializuje na komplexní péči o pohybový aparát a zotavení po úrazech, operacích
+        <h2
+          class="inter-semibold text-white text-[12px] md:text-[16px] lg:text-[18px] px-[55px] md:px-8 lg:px-12 pt-10 md:pt-12 lg:pt-16">
+          O REHABILITAČNÍM CENTRU</h2>
+        <p
+          class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+          Naše rehabilitační centrum se specializuje na komplexní péči o pohybový aparát a zotavení po úrazech,
+          operacích
           i dlouhodobých zdravotních obtížích. Náš tým zkušených fyzioterapeutů, lékařů a specialistů kombinuje moderní
           léčebné postupy s individuálním přístupem ke každému pacientovi.
         </p>
-        <p class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-0 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+        <p
+          class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
           Zaměřujeme se na léčbu bolestí zad, krční páteře, ramenních a kolenních kloubů, kyčlí, kotníků, zápěstí i
           drobnějších kloubů. Pomáháme také sportovcům vrátit se bezpečně zpět k tréninku a aktivnímu životnímu stylu.
         </p>
-        <p class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-0 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+        <p
+          class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
           Naším cílem je nejen odstranit bolest, ale také obnovit plnou funkci těla, předcházet opakovaným problémům a
           naučit vás, jak o své tělo pečovat dlouhodobě. Věříme, že správná rehabilitace může výrazně zlepšit kvalitu
           života – bez ohledu na věk či úroveň pohybové aktivity.
         </p>
-        <p class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-0 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
+        <p
+          class="inter-light text-white text-[12px] md:text-[14px] lg:text-[16px] px-[55px] md:px-8 lg:px-12 pt-3 md:pt-4 lg:pt-5 leading-relaxed">
           Jsme tu pro vás, ať už řešíte akutní zranění, chronickou bolest nebo se chcete vrátit k pohybu bez omezení.
         </p>
       </div>
 
       <div class="max-w-4xl mx-auto">
-        <p class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 pt-8 md:pt-12 lg:pt-16 text-center">© Toto je studentský projekt / INFO
+        <p
+          class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 pt-8 md:pt-12 lg:pt-16 text-center">
+          © Toto je studentský projekt / INFO
           SYI 2025 •</p>
-        <p class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 text-center">Ortopedické rehabilitační centrum |</p>
-        <p class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 text-center underline cursor-pointer hover:text-white transition">Zásady ochrany osobních údajů</p>
+        <p class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 text-center">
+          Ortopedické rehabilitační centrum |</p>
+        <p
+          class="inter-light text-[#B2B2B2] text-[12px] md:text-[13px] lg:text-[14px] px-[55px] md:px-0 text-center underline cursor-pointer hover:text-white transition">
+          Zásady ochrany osobních údajů</p>
       </div>
     </div>
   </footer>
@@ -501,6 +1097,422 @@
 
     menuButton.addEventListener('click', openMenu);
     closeMenu.addEventListener('click', closeMenuFunc);
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const menuSections = document.querySelectorAll('.menu-section');
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      menuSections.forEach(section => {
+        const searchText = section.getAttribute('data-search-text');
+
+        if (searchTerm === '' || searchText.includes(searchTerm)) {
+          section.style.display = '';
+          section.style.opacity = '1';
+        } else {
+          section.style.display = 'none';
+          section.style.opacity = '0';
+        }
+      });
+
+      // Show message if no results found
+      const visibleSections = Array.from(menuSections).filter(section => section.style.display !== 'none');
+
+      let noResultsMsg = document.getElementById('noResultsMsg');
+
+      if (visibleSections.length === 0 && searchTerm !== '') {
+        if (!noResultsMsg) {
+          noResultsMsg = document.createElement('div');
+          noResultsMsg.id = 'noResultsMsg';
+          noResultsMsg.className = 'px-6 py-8 text-center text-[#032754] inter-regular';
+          noResultsMsg.textContent = 'Nebyly nalezeny žádné výsledky';
+          document.getElementById('menuNav').appendChild(noResultsMsg);
+        }
+        noResultsMsg.style.display = 'block';
+      } else {
+        if (noResultsMsg) {
+          noResultsMsg.style.display = 'none';
+        }
+      }
+    });
+
+    // O NÁS submenu toggle
+    const onasButton = document.getElementById('onasButton');
+    const onasSubmenu = document.getElementById('onasSubmenu');
+    const onasIconPath = document.getElementById('onasIconPath');
+    let isOnasOpen = false;
+
+    onasButton.addEventListener('click', function () {
+      isOnasOpen = !isOnasOpen;
+
+      if (isOnasOpen) {
+        onasSubmenu.style.maxHeight = onasSubmenu.scrollHeight + 'px';
+        onasIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+      } else {
+        onasSubmenu.style.maxHeight = '0';
+        onasIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+      }
+    });
+
+    // ONEMOCNĚNÍ submenu toggle
+    const onemocneniButton = document.getElementById('onemocneniButton');
+    const onemocneniSubmenu = document.getElementById('onemocneniSubmenu');
+    const onemocneniIconPath = document.getElementById('onemocneniIconPath');
+    let isOnemocneniOpen = false;
+
+    onemocneniButton.addEventListener('click', function () {
+      isOnemocneniOpen = !isOnemocneniOpen;
+
+      if (isOnemocneniOpen) {
+        onemocneniSubmenu.style.maxHeight = onemocneniSubmenu.scrollHeight + 'px';
+        onemocneniIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+      } else {
+        onemocneniSubmenu.style.maxHeight = '0';
+        onemocneniIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+      }
+    });
+
+    // LÉČBA submenu toggle
+    const lecbaButton = document.getElementById('lecbaButton');
+    const lecbaSubmenu = document.getElementById('lecbaSubmenu');
+    const lecbaIconPath = document.getElementById('lecbaIconPath');
+    let isLecbaOpen = false;
+
+    lecbaButton.addEventListener('click', function () {
+      isLecbaOpen = !isLecbaOpen;
+
+      if (isLecbaOpen) {
+        lecbaSubmenu.style.maxHeight = lecbaSubmenu.scrollHeight + 'px';
+        lecbaIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+      } else {
+        lecbaSubmenu.style.maxHeight = '0';
+        lecbaIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+      }
+    });
+
+    // INFORMACE submenu toggle
+    const informaceButton = document.getElementById('informaceButton');
+    const informaceSubmenu = document.getElementById('informaceSubmenu');
+    const informaceIconPath = document.getElementById('informaceIconPath');
+    let isInformaceOpen = false;
+
+    informaceButton.addEventListener('click', function () {
+      isInformaceOpen = !isInformaceOpen;
+
+      if (isInformaceOpen) {
+        informaceSubmenu.style.maxHeight = informaceSubmenu.scrollHeight + 'px';
+        informaceIconPath.setAttribute('d', 'M5 12h14'); // Minus icon
+      } else {
+        informaceSubmenu.style.maxHeight = '0';
+        informaceIconPath.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+      }
+    });
+
+    // KRK Modal functionality
+    const krkButton = document.getElementById('krkButton');
+    const krkModal = document.getElementById('krkModal');
+    const closeKrkModal = document.getElementById('closeKrkModal');
+    const krkIcon = document.getElementById('krkIcon');
+    let isKrkModalOpen = false;
+
+    krkButton.addEventListener('click', function () {
+      isKrkModalOpen = !isKrkModalOpen;
+
+      if (isKrkModalOpen) {
+        krkModal.style.display = 'flex';
+        krkIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        krkModal.style.display = 'none';
+        krkIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeKrkModal.addEventListener('click', function () {
+      krkModal.style.display = 'none';
+      krkIcon.style.transform = 'rotate(0deg)';
+      isKrkModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    krkModal.addEventListener('click', function (e) {
+      if (e.target === krkModal) {
+        krkModal.style.display = 'none';
+        krkIcon.style.transform = 'rotate(0deg)';
+        isKrkModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // RAMENA Modal functionality
+    const ramenaButton = document.getElementById('ramenaButton');
+    const ramenaModal = document.getElementById('ramenaModal');
+    const closeRamenaModal = document.getElementById('closeRamenaModal');
+    const ramenaIcon = document.getElementById('ramenaIcon');
+    let isRamenaModalOpen = false;
+
+    ramenaButton.addEventListener('click', function () {
+      isRamenaModalOpen = !isRamenaModalOpen;
+
+      if (isRamenaModalOpen) {
+        ramenaModal.style.display = 'flex';
+        ramenaIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        ramenaModal.style.display = 'none';
+        ramenaIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeRamenaModal.addEventListener('click', function () {
+      ramenaModal.style.display = 'none';
+      ramenaIcon.style.transform = 'rotate(0deg)';
+      isRamenaModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    ramenaModal.addEventListener('click', function (e) {
+      if (e.target === ramenaModal) {
+        ramenaModal.style.display = 'none';
+        ramenaIcon.style.transform = 'rotate(0deg)';
+        isRamenaModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ZÁDA Modal functionality
+    const zadaButton = document.getElementById('zadaButton');
+    const zadaModal = document.getElementById('zadaModal');
+    const closeZadaModal = document.getElementById('closeZadaModal');
+    const zadaIcon = document.getElementById('zadaIcon');
+    let isZadaModalOpen = false;
+
+    zadaButton.addEventListener('click', function () {
+      isZadaModalOpen = !isZadaModalOpen;
+
+      if (isZadaModalOpen) {
+        zadaModal.style.display = 'flex';
+        zadaIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        zadaModal.style.display = 'none';
+        zadaIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeZadaModal.addEventListener('click', function () {
+      zadaModal.style.display = 'none';
+      zadaIcon.style.transform = 'rotate(0deg)';
+      isZadaModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    zadaModal.addEventListener('click', function (e) {
+      if (e.target === zadaModal) {
+        zadaModal.style.display = 'none';
+        zadaIcon.style.transform = 'rotate(0deg)';
+        isZadaModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // RUKA Modal functionality
+    const rukaButton = document.getElementById('rukaButton');
+    const rukaModal = document.getElementById('rukaModal');
+    const closeRukaModal = document.getElementById('closeRukaModal');
+    const rukaIcon = document.getElementById('rukaIcon');
+    let isRukaModalOpen = false;
+
+    rukaButton.addEventListener('click', function () {
+      isRukaModalOpen = !isRukaModalOpen;
+
+      if (isRukaModalOpen) {
+        rukaModal.style.display = 'flex';
+        rukaIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        rukaModal.style.display = 'none';
+        rukaIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeRukaModal.addEventListener('click', function () {
+      rukaModal.style.display = 'none';
+      rukaIcon.style.transform = 'rotate(0deg)';
+      isRukaModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    rukaModal.addEventListener('click', function (e) {
+      if (e.target === rukaModal) {
+        rukaModal.style.display = 'none';
+        rukaIcon.style.transform = 'rotate(0deg)';
+        isRukaModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // KYČEL Modal functionality
+    const kycelButton = document.getElementById('kycelButton');
+    const kycelModal = document.getElementById('kycelModal');
+    const closeKycelModal = document.getElementById('closeKycelModal');
+    const kycelIcon = document.getElementById('kycelIcon');
+    let isKycelModalOpen = false;
+
+    kycelButton.addEventListener('click', function () {
+      isKycelModalOpen = !isKycelModalOpen;
+
+      if (isKycelModalOpen) {
+        kycelModal.style.display = 'flex';
+        kycelIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        kycelModal.style.display = 'none';
+        kycelIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeKycelModal.addEventListener('click', function () {
+      kycelModal.style.display = 'none';
+      kycelIcon.style.transform = 'rotate(0deg)';
+      isKycelModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    kycelModal.addEventListener('click', function (e) {
+      if (e.target === kycelModal) {
+        kycelModal.style.display = 'none';
+        kycelIcon.style.transform = 'rotate(0deg)';
+        isKycelModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // NOHA Modal functionality
+    const nohaButton = document.getElementById('nohaButton');
+    const nohaModal = document.getElementById('nohaModal');
+    const closeNohaModal = document.getElementById('closeNohaModal');
+    const nohaIcon = document.getElementById('nohaIcon');
+    let isNohaModalOpen = false;
+
+    nohaButton.addEventListener('click', function () {
+      isNohaModalOpen = !isNohaModalOpen;
+
+      if (isNohaModalOpen) {
+        nohaModal.style.display = 'flex';
+        nohaIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        nohaModal.style.display = 'none';
+        nohaIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeNohaModal.addEventListener('click', function () {
+      nohaModal.style.display = 'none';
+      nohaIcon.style.transform = 'rotate(0deg)';
+      isNohaModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    nohaModal.addEventListener('click', function (e) {
+      if (e.target === nohaModal) {
+        nohaModal.style.display = 'none';
+        nohaIcon.style.transform = 'rotate(0deg)';
+        isNohaModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // KOLENO Modal functionality
+    const kolenoButton = document.getElementById('kolenoButton');
+    const kolenoModal = document.getElementById('kolenoModal');
+    const closeKolenoModal = document.getElementById('closeKolenoModal');
+    const kolenoIcon = document.getElementById('kolenoIcon');
+    let isKolenoModalOpen = false;
+
+    kolenoButton.addEventListener('click', function () {
+      isKolenoModalOpen = !isKolenoModalOpen;
+
+      if (isKolenoModalOpen) {
+        kolenoModal.style.display = 'flex';
+        kolenoIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        kolenoModal.style.display = 'none';
+        kolenoIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeKolenoModal.addEventListener('click', function () {
+      kolenoModal.style.display = 'none';
+      kolenoIcon.style.transform = 'rotate(0deg)';
+      isKolenoModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    kolenoModal.addEventListener('click', function (e) {
+      if (e.target === kolenoModal) {
+        kolenoModal.style.display = 'none';
+        kolenoIcon.style.transform = 'rotate(0deg)';
+        isKolenoModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
+
+    // KOTNÍK Modal functionality
+    const kotnikButton = document.getElementById('kotnikButton');
+    const kotnikModal = document.getElementById('kotnikModal');
+    const closeKotnikModal = document.getElementById('closeKotnikModal');
+    const kotnikIcon = document.getElementById('kotnikIcon');
+    let isKotnikModalOpen = false;
+
+    kotnikButton.addEventListener('click', function () {
+      isKotnikModalOpen = !isKotnikModalOpen;
+
+      if (isKotnikModalOpen) {
+        kotnikModal.style.display = 'flex';
+        kotnikIcon.style.transform = 'rotate(45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        kotnikModal.style.display = 'none';
+        kotnikIcon.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    closeKotnikModal.addEventListener('click', function () {
+      kotnikModal.style.display = 'none';
+      kotnikIcon.style.transform = 'rotate(0deg)';
+      isKotnikModalOpen = false;
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    kotnikModal.addEventListener('click', function (e) {
+      if (e.target === kotnikModal) {
+        kotnikModal.style.display = 'none';
+        kotnikIcon.style.transform = 'rotate(0deg)';
+        isKotnikModalOpen = false;
+        document.body.style.overflow = '';
+      }
+    });
   </script>
 </body>
 
