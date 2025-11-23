@@ -1,6 +1,5 @@
 [build]
-  base = "Rehabilitace"
-  command = "rm -rf node_modules && npm install && npm run build"
+  command = "cd Rehabilitace && rm -rf node_modules && npm install && npm run build"
   publish = "Rehabilitace/dist"
 
 [[redirects]]
