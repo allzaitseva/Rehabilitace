@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+:root {
+  --main-blue: #032754;
+  --main-cyan: #62A8C6;
+  --main-accent: #84C9FE;
+  --main-dark-blue: #3D6FAD;
+  --main-bg: #EAEAEA;
+  --main-footer-bg: #1C1D1F;
+  --main-footer-accent: #75D1D9;
+  --main-footer-text: #B2B2B2;
+  --main-grey: #D9D9D9;
+}
+
 /* Poppins Font Styles */
 .poppins-thin {
   font-family: "Poppins", sans-serif;
